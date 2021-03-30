@@ -14,9 +14,24 @@ describe("app routes", () => {
   it('should return html with an h1 and the word red by requesting "/red" ', async () => {
     try {
       const data = await request(app).get("/red");
+      console.log(data.text);
       expect(data.text).toEqual(`<html>
   <body>
     <h1>Red</h1>
+  </body>
+</html>`);
+    } catch (e) {
+      console.log(e.message);
+    }
+  });
+
+  it('should return html with an h1 and the word blue by requesting "/blue" ', async () => {
+    try {
+      const data = await request(app).get("/red");
+      console.log(data.text);
+      expect(data.text).toEqual(`<html>
+  <body>
+    <h1>Blue</h1>
   </body>
 </html>`);
     } catch (e) {
