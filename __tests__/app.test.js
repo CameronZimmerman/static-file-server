@@ -14,7 +14,7 @@ describe("app routes", () => {
   it('should return html with an h1 and the word red by requesting "/red" ', async () => {
     try {
       const data = await request(app).get("/red");
-      expect(data.body).toEqual(`<html>
+      expect(data.text).toEqual(`<html>
   <body>
     <h1>Red</h1>
   </body>
