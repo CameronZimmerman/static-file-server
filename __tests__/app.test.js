@@ -38,4 +38,18 @@ describe("app routes", () => {
       console.log(e.message);
     }
   });
+
+  it('should return html with an h1 and the word green by requesting "/green" ', async () => {
+    try {
+      const data = await request(app).get("/green");
+      console.log(data.text);
+      expect(data.text).toEqual(`<html>
+  <body>
+    <h1>Green</h1>
+  </body>
+</html>`);
+    } catch (e) {
+      console.log(e.message);
+    }
+  });
 });
