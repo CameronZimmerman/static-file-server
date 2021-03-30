@@ -58,6 +58,7 @@ describe("app routes", () => {
       const data = await request(app).post("/echo").send("hello");
 
       expect(data.text).toEqual("hello");
+      expect(data.status).toEqual(200);
     } catch (e) {
       console.log(e.message);
     }
